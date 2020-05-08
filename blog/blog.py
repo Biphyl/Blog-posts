@@ -7,13 +7,13 @@ posts = [
         'author': 'Biron Odhiambo',
         'title': 'Blog post 1',
         'content': 'First post content',
-        'dateO_posted': 'May 08, 2020'
+        'date_posted': 'May 08, 2020'
     },
     {
         'author': 'Lovine Otieno',
         'title': 'Blog post 2',
         'content': 'Second post content',
-        'dateO_posted': 'May 09, 2020'
+        'date_posted': 'May 09, 2020'
     }
 ]
 
