@@ -15,6 +15,7 @@ class User(db.Model):
     email = db.Column(db.string(120), unique=True, nullable=False)
     image_file = db.Column(db.string(20), nullable=False, defaul='default.jpg')
     password = db.Column(db.string(60), nullable=False)
+    posts = db.relationship('Post', backref='author', lazy=True)
 
 
     def __repr__(self)
@@ -26,6 +27,7 @@ class Post(db.Model):
     title = db.Column(db.string(100), nullable=False)
     date_posted = db.Column(db.dateTime, nullable=False, default=datetime.utcnow)
     content = db.Column(db.Text, nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 
 
     def __repr__(self)
