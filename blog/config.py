@@ -3,7 +3,7 @@ import os
 
 class Config:
     SECRET_KEY = 'Lovine'
-    SQLALCHEMY_DATABASE_URI = 'postgres://quicswskimygnc:a6007b777f1c5937303b5b967f9bed26702675268fc0bd2172a4e2f382a3f3ff@ec2-35-169-254-43.compute-1.amazonaws.com:5432/dacv4uebqhv4bs'
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///site.db'
     MAIL_SERVER = 'smtp.googlemail.com'
     MAIL_PORT = 587
     MAIL_USE_TLS = True
@@ -11,7 +11,7 @@ class Config:
     MAIL_PASSWORD = os.environ.get('EMAIL_PASS')
 
 class DevConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgres://quicswskimygnc:a6007b777f1c5937303b5b967f9bed26702675268fc0bd2172a4e2f382a3f3ff@ec2-35-169-254-43.compute-1.amazonaws.com:5432/dacv4uebqhv4bs'
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///site.db'
     DEBUG = True
 
 class ProdConfig(Config):
@@ -20,7 +20,7 @@ class ProdConfig(Config):
     Args:
         Config:The parent configuration class with General configuration settings
     '''
-    SQLALCHEMY_DATABASE_URI = 'postgres://quicswskimygnc:a6007b777f1c5937303b5b967f9bed26702675268fc0bd2172a4e2f382a3f3ff@ec2-35-169-254-43.compute-1.amazonaws.com:5432/dacv4uebqhv4bs'
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///site.db'
 
 config_options = {
 'development':DevConfig,
